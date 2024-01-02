@@ -1,4 +1,9 @@
 node_modules/
 chrome/
 .vs/
+<<<<<<< Updated upstream
 .env
+=======
+.env
+.env
+>>>>>>> Stashed changes

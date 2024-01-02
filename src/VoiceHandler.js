@@ -80,15 +80,15 @@ class VoiceHandler
 
          stream.on('finish', async() => 
          {
-            await this.handleUserHasSpoken(outputPath);
+        ///    await this.handleUserHasSpoken(outputPath);
          });
         }); 
       }
 
       async handleUserHasSpoken(spokenTextPath)
       {
-        const characterAIID = "tYumSvjaKy2rAFBSusTBqb8HOiXPuqiiSun0DYckuEg";
-        const elevenLabCharacterID = "t72Wefb41W5sJgEisdlv";
+        const characterAIID = "iRvnUqkNhYdEBpSimdULppGJi3j6aWY-or3ae7lUw-Y";
+        const elevenLabCharacterID = "SLBfTndsUoC93BpU2FkU";
 
         if(!getCharacterGenerateLock(characterAIID))
         {
@@ -99,8 +99,10 @@ class VoiceHandler
           debugData.push(getCurrentTimestamp());
 
           var spokenText = await SpeechToText(spokenTextPath);
+
           console.log("speech to text");
           console.log(spokenText);
+
 
           debugData.push(getCurrentTimestamp());
 
@@ -108,16 +110,24 @@ class VoiceHandler
           console.log("response");
           
           console.log(response);
-          debugData.push(getCurrentTimestamp());
+            
 
-          var responseAudio = await GenerateVoice(response.text, elevenLabCharacterID, "eleven_turbo_v2",4, 0.65, 0.90, 0, false);
+          debugData.push(getCurrentTimestamp());
+          //Uzi -> stability:0.65, similarity boost: 0.90 
+          var responseAudio = await GenerateVoice(response.text, elevenLabCharacterID, "eleven_turbo_v2",4, 0.61, 1, 0, false);
 
           console.log("voice");
           debugData.push(getCurrentTimestamp());
 
           this.audioPlayer.play(await createAudioResource(responseAudio));
 
-          setCharacterGenerateLock(characterAIID, false);
+
+          this.audioPlayer.addListener("stateChange", (oldOne, newOne) => {
+            if (newOne.status == "idle") {
+              setCharacterGenerateLock(characterAIID, false);
+            }
+        });
+        
           //Debug
           var debugDataTemp = [...debugData];
 
@@ -129,6 +139,15 @@ class VoiceHandler
           debugData[0] = 0;
 
           console.log(debugData);
+        }
+
+        try
+        {
+          //fs.unlinkSync(spokenTextPath);
+        }
+        catch(err)
+        {
+
         }
       }
 

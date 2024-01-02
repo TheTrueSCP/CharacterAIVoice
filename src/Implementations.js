@@ -77,6 +77,8 @@ async function SpeechToText(speechFilePath)
 
     var buffer = await speechOutput.arrayBuffer();
 
+    await fs.unlinkSync(speechFilePath);
+
    return await textDecoder.decode(buffer);
   }
   catch(err)
@@ -144,7 +146,12 @@ async function GenerateVoice(text, characterID, modelID, latency, stability, sim
       await fs.mkdirSync(fileOutputPath, {recursive: true});
     }
 
+    if(fs.existsSync(fileOutput))
+    {
+     await fs.unlinkSync(fileOutput);
+    }
     fs.writeFileSync(fileOutput, await Buffer.from(arrayBuffer));
+
 
     return fileOutput;
   }
