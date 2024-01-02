@@ -61,7 +61,7 @@ class VoiceHandler
 
             var outputPath = join(outputDir, `${userId}.wav`);
 
-            const FileWriter = require('wav').FileWriter
+            const FileWriter = require('wav').FileWriter;
             
             let audioStream = await bufferToStream(Buffer.concat(buffer));
 
@@ -72,15 +72,15 @@ class VoiceHandler
 
             var outputFileStream = new FileWriter(outputPath, 
             {
-                                        sampleRate: 48000,
-                                      channels: 2
+              sampleRate: 48000,
+              channels: 2
             });
 
          var stream = audioStream.pipe(outputFileStream);
 
          stream.on('finish', async() => 
          {
-        ///    await this.handleUserHasSpoken(outputPath);
+            await this.handleUserHasSpoken(outputPath);
          });
         }); 
       }
@@ -143,7 +143,7 @@ class VoiceHandler
 
         try
         {
-          //fs.unlinkSync(spokenTextPath);
+          fs.unlinkSync(spokenTextPath);
         }
         catch(err)
         {
