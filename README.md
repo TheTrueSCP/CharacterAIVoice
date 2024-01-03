@@ -52,7 +52,8 @@ OPENAI_SPEECH_TO_TEXT_API_KEY -> If you are logged in, under API-Keys, you need 
 
 How to get CharacterAI Character Id: Open the Ai-chat, open the URL and copy everything from the "char=" to the "&"
 Example: https://plus.character.ai/chat?char=uoXbcxeSOqavDBZdD_yYaz6x4tOqCeAqikvTLfvVCg8&source=recent-chats -> uoXbcxeSOqavDBZdD_yYaz6x4tOqCeAqikvTLfvVCg8
-Elevenlab:just click the ID button when you have found or created your voice
+
+How to get Elevenlab ID:just click the ID button when you have found or created your voice
 
 
 So, you see, its FUCKING Complicated to make this running, and of course you will run into a few issues, so 
