@@ -7,7 +7,7 @@ It works with a few APIs:
 2. Node(Javascript) - the giganitc logic behind it - free
    
 3. Elevenlabs - the voice cloning AI - not free
-4. OpenAI Whipser - voice to text - not free
+4. OpenAI Whipser - voice to text - partly free(free account and 10000 character limit/month)
 
 Note:
 Im currently trying to remove the paid stuff and with the new Character Ai vocie cloning feature(currently only ca.plus subscriber accessable) Elevenlabs will removed at some point. 
