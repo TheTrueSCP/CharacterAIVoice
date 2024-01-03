@@ -44,11 +44,12 @@ So, if you really want to set this up, well here are the steps:
 
 
 Token Explanation:
-1.DISCORD_BOT_TOKEN -> The token of your discord bot which will be given to you of you create a discord application(bot), ALSO DONT FORGET TO ENABLE ALL INTENTS
-2.DISCORD_BOT_CLIENT_ID -> The public client id, also called "Application ID" which can be found in your discord bot-dev site under "General Information -> Application ID"
-3.CHARACTER_AI_CLIENT_TOKEN -> The hardest one to get, see https://github.com/realcoloride/node_characterai?tab=readme-ov-file#using-an-access-token
-4.ELEVENLABS_API_KEY -> When you logged into your elevenlabs account, you can get this under: Profile -> API-Key
-5.OPENAI_SPEECH_TO_TEXT_API_KEY -> If you are logged in, under API-Keys, you need to create a new one and copy it
+
+1. DISCORD_BOT_TOKEN -> The token of your discord bot which will be given to you of you create a discord application(bot), ALSO DONT FORGET TO ENABLE ALL INTENTS
+2. DISCORD_BOT_CLIENT_ID -> The public client id, also called "Application ID" which can be found in your discord bot-dev site under "General Information -> Application ID"
+3. CHARACTER_AI_CLIENT_TOKEN -> The hardest one to get, see https://github.com/realcoloride/node_characterai?tab=readme-ov-file#using-an-access-token
+4. ELEVENLABS_API_KEY -> When you logged into your elevenlabs account, you can get this under: Profile -> API-Key
+5. OPENAI_SPEECH_TO_TEXT_API_KEY -> If you are logged in, under API-Keys, you need to create a new one and copy it
 
 How to get CharacterAI Character Id: Open the Ai-chat, open the URL and copy everything from the "char=" to the "&"
 Example: https://plus.character.ai/chat?char=uoXbcxeSOqavDBZdD_yYaz6x4tOqCeAqikvTLfvVCg8&source=recent-chats -> uoXbcxeSOqavDBZdD_yYaz6x4tOqCeAqikvTLfvVCg8
@@ -57,5 +58,5 @@ How to get Elevenlab ID:just click the ID button when you have found or created 
 
 
 So, you see, its FUCKING Complicated to make this running, and of course you will run into a few issues, so 
-if you still want to try and run this, im here to get it running on your side, so just ask me Discord (username: thetruescp) if you need help with anything :)
+if you still want to try and run this, im here to get it running on your side, so just ask me Discord (username: thetruescp) if you need help with anything or just want to ask something :)
 
